@@ -1,4 +1,5 @@
 import React from "react";
+import CharacterList from "./CharacterList";
 import getApiData from "../services/api";
 
 class App extends React.Component {
@@ -21,6 +22,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hola bebé</h1>
+        <CharacterList characters={this.state.characters} />
       </div>
     );
   }

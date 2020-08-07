@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CharacterList from "./CharacterList";
 import getApiData from "../services/api";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div>
       <h1>Hola bebé</h1>
+      <CharacterList characters={characters} />
     </div>
   );
 };
