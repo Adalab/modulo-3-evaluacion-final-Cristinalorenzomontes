@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import getApiData from "../services/api";
 import CharacterDetail from "./CharacterDetail";
 import CharacterList from "./CharacterList";
-import getApiData from "../services/api";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -12,15 +13,19 @@ const App = () => {
     });
   }, []);
 
-  const renderCharacterDetail = () => {
-    const character = characters[3];
+  const renderCharacterDetail = (props) => {
+    console.log(props);
+    const routeCharacterId = parseInt(props.match.params.characterId);
+    const character = characters.find(
+      (character) => character.id === routeCharacterId
+    );
     if (character) {
       return (
         <CharacterDetail
           image={character.image}
           name={character.name}
           status={character.status}
-          species={character.species}
+          specie={character.species}
         />
       );
     }
@@ -30,7 +35,10 @@ const App = () => {
     <div>
       <h1>Rick y Morty</h1>
       <CharacterList characters={characters} />
-      {renderCharacterDetail()}
+
+      <Switch>
+        <Route path="/character/:characterId" render={renderCharacterDetail} />
+      </Switch>
     </div>
   );
 };

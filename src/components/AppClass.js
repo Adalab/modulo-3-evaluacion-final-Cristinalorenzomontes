@@ -1,7 +1,8 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
+import getApiData from "../services/api";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
-import getApiData from "../services/api";
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class App extends React.Component {
     this.state = {
       characters: [],
     };
-    this.renderCharacterDetail.bind(this);
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
   componentDidMount() {
@@ -20,26 +21,37 @@ class App extends React.Component {
     });
   }
 
-  renderCharacterDetail() {
-    const character = this.state.characters[1];
+  renderCharacterDetail(props) {
+    console.log(props);
+    const routeCharacterId = parseInt(props.match.params.characterId);
+    const character = this.state.characters.find(
+      (character) => character.id === routeCharacterId
+    );
     if (character) {
       return (
         <CharacterDetail
           image={character.image}
           name={character.name}
           status={character.status}
-          species={character.species}
+          specie={character.species}
         />
       );
+    } else {
+      return <p>Producto no encontrado</p>;
     }
   }
 
   render() {
     return (
       <div>
-        <h1>Hola bebé</h1>
+        <h1>Hola bebé con clase</h1>
         <CharacterList characters={this.state.characters} />
-        {this.renderCharacterDetail()}
+        <Switch>
+          <Route
+            path="/character/:characterId"
+            render={this.renderCharacterDetail}
+          />
+        </Switch>
       </div>
     );
   }

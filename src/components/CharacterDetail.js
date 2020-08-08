@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CharacterDetail = (props) => {
   return (
@@ -7,9 +8,9 @@ const CharacterDetail = (props) => {
         <div className="modal__content">
           <header className="modal__header">
             <h2 className="modal__title"> Personaje: {props.name}</h2>
-            <a href="/">
+            <Link to="/">
               <span className="modal__close icon fas fa-times"></span>
-            </a>
+            </Link>
           </header>
           <section>
             <img className="card__img" src={props.image} alt={props.name} />
