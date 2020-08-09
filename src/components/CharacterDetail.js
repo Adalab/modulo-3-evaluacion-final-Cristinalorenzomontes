@@ -43,6 +43,7 @@ CharacterDetail.propTypes = {
   status: PropTypes.string,
   specie: PropTypes.string,
   origin: PropTypes.string,
+  gender: PropTypes.string,
   episodes: PropTypes.number,
 };
 
