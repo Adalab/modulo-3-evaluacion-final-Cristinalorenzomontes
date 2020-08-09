@@ -4,6 +4,9 @@ import logo from "../images/logo.png";
 import getApiData from "../services/api";
 import "../stylesheet/Reset.scss";
 import "../stylesheet/App.scss";
+import "../stylesheet/header.scss";
+import "../stylesheet/main.scss";
+import "../stylesheet/footer.scss";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
@@ -70,18 +73,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>
-        <h1>
-          {" "}
-          <img
-            className="logo"
-            src={logo}
-            alt="logo"
-            title="Logo Rick & Morty"
-          ></img>
-        </h1>
+      <header className="header">
+        <h1> </h1>
       </header>
-      <main>
+      <main className="main">
         <Switch>
           <Route exact path="/">
             <Filters
@@ -100,6 +95,9 @@ const App = () => {
           />
         </Switch>
       </main>
+      <footer className="footer">
+        <h4>&copy; 2020 Christina Lorenzo Montes</h4>
+      </footer>
     </div>
   );
 };

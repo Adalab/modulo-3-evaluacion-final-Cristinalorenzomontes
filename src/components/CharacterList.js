@@ -1,7 +1,6 @@
 import React from "react";
 import "../stylesheet/characterList.scss";
 import Character from "./Character";
-
 import PropTypes from "prop-types";
 
 const CharacterList = (props) => {
