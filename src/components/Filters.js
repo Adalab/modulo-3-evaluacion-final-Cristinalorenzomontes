@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheet/filter.scss";
 import FilterByName from "./FilterByName";
 import FilterByStatus from "./FilterByStatus";
 

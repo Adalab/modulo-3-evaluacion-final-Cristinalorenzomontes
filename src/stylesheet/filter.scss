@@ -1,0 +1,24 @@
+.input-name,
+.label-status,
+.form__input-text {
+  height: 2rem;
+  width: 20rem;
+  background-color: black;
+  border: teal 2px solid;
+  color: white;
+  align-self: center;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  @media all and (min-width: 768px) {
+    width: 20rem;
+  }
+}
+.input-name {
+  margin: 1rem;
+}
+
+.label-status,
+.form__input-text {
+  margin: 0.5rem;
+  height: 2rem;
+}

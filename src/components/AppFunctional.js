@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
+import logo from "../images/logo.png";
 import getApiData from "../services/api";
+import "../stylesheet/Reset.scss";
+import "../stylesheet/App.scss";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
@@ -66,22 +69,37 @@ const App = () => {
     });
 
   return (
-    <div>
-      <h1>Rick & Morty</h1>
-      <Switch>
-        <Route exact path="/">
-          <Filters
-            handleFilter={handleFilter}
-            filterName={filterName}
-            filterStatus={filterStatus}
+    <div className="App">
+      <header>
+        <h1>
+          {" "}
+          <img
+            className="logo"
+            src={logo}
+            alt="logo"
+            title="Logo Rick & Morty"
+          ></img>
+        </h1>
+      </header>
+      <main>
+        <Switch>
+          <Route exact path="/">
+            <Filters
+              handleFilter={handleFilter}
+              filterName={filterName}
+              filterStatus={filterStatus}
+            />
+            <CharacterList
+              characters={filteredCharacters}
+              filterName={filterName}
+            />
+          </Route>
+          <Route
+            path="/character/:characterId"
+            render={renderCharacterDetail}
           />
-          <CharacterList
-            characters={filteredCharacters}
-            filterName={filterName}
-          />
-        </Route>
-        <Route path="/character/:characterId" render={renderCharacterDetail} />
-      </Switch>
+        </Switch>
+      </main>
     </div>
   );
 };

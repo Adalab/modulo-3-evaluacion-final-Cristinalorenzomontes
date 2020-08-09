@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheet/filter.scss";
 
 const FilterByStatus = (props) => {
   const handleChange = (ev) => {
@@ -11,7 +12,7 @@ const FilterByStatus = (props) => {
   return (
     <>
       <label className="label-status" htmlFor="status">
-        Filter by status:
+        Status:
       </label>
       <select
         id="status"

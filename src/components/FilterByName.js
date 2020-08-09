@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheet/filter.scss";
 
 const FilterByName = (props) => {
   const handleChange = (ev) => {
@@ -10,9 +11,7 @@ const FilterByName = (props) => {
 
   return (
     <>
-      <label className="label-name" htmlFor="name">
-        Filter by name:
-      </label>
+      <label className="label-name" htmlFor="name"></label>
       <input
         className="input-name"
         type="text"
@@ -20,6 +19,7 @@ const FilterByName = (props) => {
         id="name"
         value={props.filterName}
         onChange={handleChange}
+        placeholder="Filter by name"
       />
     </>
   );
