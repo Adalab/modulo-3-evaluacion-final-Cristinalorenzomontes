@@ -11,6 +11,8 @@ const CharacterList = (props) => {
         name={character.name}
         status={character.status}
         species={character.species}
+        origin={character.origin}
+        episodes={character.episodes}
       />
     );
   });

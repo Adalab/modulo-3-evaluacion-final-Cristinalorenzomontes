@@ -26,17 +26,24 @@ const App = () => {
           name={character.name}
           status={character.status}
           specie={character.species}
+          origin={character.origin}
+          gender={character.gender}
+          episodes={character.episodes}
         />
       );
+    } else {
+      return <p>Character not found</p>;
     }
   };
 
   return (
     <div>
-      <h1>Rick y Morty</h1>
-      <CharacterList characters={characters} />
+      <h1>Rick & Morty</h1>
 
       <Switch>
+        <Route exact path="/">
+          <CharacterList characters={characters} />
+        </Route>
         <Route path="/character/:characterId" render={renderCharacterDetail} />
       </Switch>
     </div>

@@ -34,19 +34,24 @@ class App extends React.Component {
           name={character.name}
           status={character.status}
           specie={character.species}
+          origin={character.origin}
+          gender={character.gender}
+          episodes={character.episodes}
         />
       );
     } else {
-      return <p>Producto no encontrado</p>;
+      return <p>Character not found</p>;
     }
   }
 
   render() {
     return (
       <div>
-        <h1>Hola bebé con clase</h1>
-        <CharacterList characters={this.state.characters} />
+        <h1>Rick & Morty</h1>
         <Switch>
+          <Route exact path="/">
+            <CharacterList characters={this.state.characters} />
+          </Route>
           <Route
             path="/character/:characterId"
             render={this.renderCharacterDetail}
