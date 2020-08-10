@@ -1,21 +1,13 @@
 .card__btn {
-  background-color: teal;
-  color: white;
+  background-color: white(110, 44, 44);
+  color: teal;
   border-radius: 22.5px;
   font-weight: bold;
 }
-.atributes {
+.card {
+  text-decoration: none;
   background-color: teal;
   color: white;
   font-weight: bold;
   border-radius: 10px;
-}
-.card__img {
-  border-radius: 10px;
-}
-.flex {
-  display: flex;
-}
-.card {
-  text-decoration: none;
 }

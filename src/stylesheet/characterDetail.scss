@@ -1,17 +1,10 @@
-.container {
-  display: flex;
-  justify-content: center;
-}
 .modal {
-  width: 50%;
+  width: 100%;
   background-color: teal;
   color: white;
-  margin: 0rem 1.5rem;
   border-radius: 22.5px;
+  font-weight: bold;
 }
-// .modal__header {
-//   text-decoration: none;
-// }
 .card__detail {
   list-style: none;
   font-weight: bold;
@@ -21,4 +14,9 @@
   background-color: white;
   color: black;
   border-radius: 10px;
+}
+.container {
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
 }

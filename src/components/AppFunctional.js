@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import logo from "../images/logo.png";
 import getApiData from "../services/api";
 import "../stylesheet/Reset.scss";
 import "../stylesheet/App.scss";
@@ -37,7 +36,6 @@ const App = () => {
   };
 
   const renderCharacterDetail = (props) => {
-    console.log(props);
     const routeCharacterId = parseInt(props.match.params.characterId);
     const character = characters.find(
       (character) => character.id === routeCharacterId
