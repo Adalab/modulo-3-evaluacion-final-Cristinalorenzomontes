@@ -23,7 +23,7 @@ const CharacterDetail = (props) => {
                 <img className="card__img" src={props.image} alt={props.name} />
                 <ul className="card__detail">
                   <li> Specie: {props.specie} </li>
-                  <li> Status: {props.status} </li>
+                  <li> Status: {props.status === "Alive" ? "👽" : "💀"} </li>
                   <li> Origin: {props.origin} </li>
                   <li> Gender: {props.gender} </li>
                   <li> Episodes: {props.episodes} </li>
